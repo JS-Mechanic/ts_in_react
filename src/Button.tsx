@@ -1,10 +1,9 @@
-// let url = "https://miladsa.de";
-// url = 2;
+type ButtonProps = {
+  label: "click" | "Click on Me";
+  backgroundColor: "pink" | "gray" | "red";
+  pillShape?: boolean;
+};
 
-function convertCurrency(amount: number, currency: string): void {
-  // Some code
-}
-
-export default function Button() {
-  return <></>;
+export default function Button({ label, backgroundColor }: ButtonProps) {
+  return <button style={{ backgroundColor: backgroundColor }}>{label}</button>;
 }
