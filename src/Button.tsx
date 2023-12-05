@@ -1,20 +1,21 @@
 type ButtonProps = {
   label: "click" | "Click on Me";
-  style: {
-    backgroundColor: "pink" | "gray" | "red";
-    padding: [string, string, string, string];
-  };
+  style: React.CSSProperties;
+  borderRadius: { [edge: string]: number };
 };
 
-export default function Button({ style }: ButtonProps) {
+export default function Button({ label, style, borderRadius }: ButtonProps) {
+  const { topLeft, topRight, bottomRight, bottomLeft } = borderRadius;
   return (
     <button
       style={{
+        color: style.color,
         backgroundColor: style.backgroundColor,
-        padding: `${style.padding[0]} ${style.padding[1]} ${style.padding[2]} ${style.padding[3]}`,
+        padding: style.padding,
+        borderRadius: `${topLeft}px ${topRight}px ${bottomRight}px ${bottomLeft}px`,
       }}
     >
-      Click on Me
+      {label}
     </button>
   );
 }
