@@ -1,11 +1,14 @@
 import Button from "./Button.tsx";
+import { useState } from "react";
 
 export default function Page() {
-  function handleClick() {
-    console.log("Button clicked!");
-  }
+  const [count, setCount] = useState(0);
 
   const buttonTitle = <p>Click On Me</p>;
+
+  function handleClick() {
+    setCount((prev) => prev + 1);
+  }
 
   return (
     <main>
@@ -23,7 +26,10 @@ export default function Page() {
         }}
         onClick={handleClick}
       >
-        {buttonTitle}
+        <>
+          {buttonTitle}
+          {count}
+        </>
       </Button>
     </main>
   );

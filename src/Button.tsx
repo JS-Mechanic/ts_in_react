@@ -1,10 +1,10 @@
-import React, { JSX } from "react";
+import React, { JSX, MouseEventHandler } from "react";
 
 type ButtonProps = {
   children: JSX.Element;
   style: React.CSSProperties;
   borderRadius: { [edge: string]: number };
-  onClick: () => void;
+  onClick: MouseEventHandler<HTMLButtonElement>;
 };
 
 export default function Button({
