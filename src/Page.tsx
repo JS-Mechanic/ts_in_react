@@ -1,6 +1,10 @@
 import Button from "./Button.tsx";
 
 export default function Page() {
+  function handleClick() {
+    console.log("Button clicked!");
+  }
+
   return (
     <main>
       <Button
@@ -16,6 +20,7 @@ export default function Page() {
           bottomRight: 15,
           bottomLeft: 20,
         }}
+        onClick={handleClick}
       />
     </main>
   );
