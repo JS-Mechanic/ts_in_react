@@ -1,14 +1,14 @@
 import React from "react";
 
 type ButtonProps = {
-  label: "click" | "Click on Me";
+  children: React.ReactNode;
   style: React.CSSProperties;
   borderRadius: { [edge: string]: number };
   onClick: () => void;
 };
 
 export default function Button({
-  label,
+  children,
   style,
   borderRadius,
   onClick,
@@ -24,7 +24,7 @@ export default function Button({
       }}
       onClick={onClick}
     >
-      {label}
+      {children}
     </button>
   );
 }

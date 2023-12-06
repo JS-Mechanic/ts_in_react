@@ -8,7 +8,6 @@ export default function Page() {
   return (
     <main>
       <Button
-        label={"Click on Me"}
         style={{
           color: "green",
           backgroundColor: "pink",
@@ -21,7 +20,9 @@ export default function Page() {
           bottomLeft: 20,
         }}
         onClick={handleClick}
-      />
+      >
+        Click
+      </Button>
     </main>
   );
 }
