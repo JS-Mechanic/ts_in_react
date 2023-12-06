@@ -1,30 +1,22 @@
-import React, { JSX, MouseEventHandler } from "react";
+import { ComponentPropsWithoutRef } from "react";
 
-type ButtonProps = {
-  children: JSX.Element;
-  style: React.CSSProperties;
-  borderRadius: { [edge: string]: number };
-  onClick: MouseEventHandler<HTMLButtonElement>;
+type ButtonProps = ComponentPropsWithoutRef<"button"> & {
+  variant?: "primary" | "secondary";
 };
 
 export default function Button({
   children,
-  style,
-  borderRadius,
-  onClick,
+  variant,
+  autoFocus,
+  type,
+  ...rest
 }: ButtonProps) {
-  const { topLeft, topRight, bottomRight, bottomLeft } = borderRadius;
   return (
-    <button
-      style={{
-        color: style.color,
-        backgroundColor: style.backgroundColor,
-        padding: style.padding,
-        borderRadius: `${topLeft}px ${topRight}px ${bottomRight}px ${bottomLeft}px`,
-      }}
-      onClick={onClick}
-    >
-      {children}
+    <button autoFocus={autoFocus} type={type} {...rest}>
+      <>
+        {children}
+        <div>{variant}</div>
+      </>
     </button>
   );
 }
