@@ -1,7 +1,7 @@
-import React from "react";
+import React, { JSX } from "react";
 
 type ButtonProps = {
-  children: React.ReactNode;
+  children: JSX.Element;
   style: React.CSSProperties;
   borderRadius: { [edge: string]: number };
   onClick: () => void;

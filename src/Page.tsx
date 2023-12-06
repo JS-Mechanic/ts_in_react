@@ -5,6 +5,8 @@ export default function Page() {
     console.log("Button clicked!");
   }
 
+  const buttonTitle = <p>Click On Me</p>;
+
   return (
     <main>
       <Button
@@ -21,7 +23,7 @@ export default function Page() {
         }}
         onClick={handleClick}
       >
-        Click
+        {buttonTitle}
       </Button>
     </main>
   );
