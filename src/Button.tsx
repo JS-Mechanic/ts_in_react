@@ -1,19 +1,7 @@
-const buttonTextOptions = [
-  "Click me",
-  "Click me again",
-  "Click me one more time",
-] as const;
+type User = { name: string; sessionId: number };
+
+type Guest = Omit<User, "name">;
 
 export default function Button() {
-  return (
-    <>
-      {buttonTextOptions.map((option) => {
-        return (
-          <button key={option} style={{ display: "block" }}>
-            {option}
-          </button>
-        );
-      })}
-    </>
-  );
+  return <button>Click on me</button>;
 }
