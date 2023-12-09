@@ -1,7 +1,14 @@
-type User = { name: string; sessionId: number };
+import { useEffect } from "react";
 
-type Guest = Omit<User, "name">;
+type ButtonColor = "red" | "green" | "blue";
 
 export default function Button() {
-  return <button>Click on me</button>;
+  useEffect(() => {
+    const previousButtonColor = localStorage.getItem(
+      "buttonColor",
+    ) as ButtonColor;
+    console.log(previousButtonColor);
+  }, []);
+
+  return <button>Click on me </button>;
 }
