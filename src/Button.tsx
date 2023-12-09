@@ -1,9 +1,7 @@
-import React from "react";
+import { useRef } from "react";
 
 export default function Button() {
-  function handleClick(e: React.MouseEvent<HTMLButtonElement, MouseEvent>) {
-    console.log(`Button clicked ---> ${e.target}`);
-  }
-
-  return <button onClick={handleClick}>Click me</button>;
+  const ref = useRef<HTMLButtonElement>(null);
+  console.log(ref);
+  return <button ref={ref}>Click me</button>;
 }
