@@ -1,14 +1,20 @@
-// const convertToArray = <T,>(value: T): T[] => {
-//   return [value];
-// };
-
-function convertToArray<T>(val: T): T[] {
-  return [val];
-}
-
-console.log(convertToArray(5));
-console.log(convertToArray("React"));
-
-export default function Button() {
-  return <button>Click on me </button>;
+type ButtonProps<T> = {
+  countValue: T;
+  countHistory: T[];
+};
+export default function Button<T>({
+  countValue,
+  countHistory,
+}: ButtonProps<T>) {
+  return (
+    <>
+      <button>Click on me</button>
+      <p>{countValue.toString()}</p>
+      <p>
+        {countHistory.reduce((acc, item) => {
+          return acc + item.toString();
+        }, "")}
+      </p>
+    </>
+  );
 }
