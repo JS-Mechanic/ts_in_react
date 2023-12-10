@@ -1,14 +1,14 @@
-import { useEffect } from "react";
+// const convertToArray = <T,>(value: T): T[] => {
+//   return [value];
+// };
 
-type ButtonColor = "red" | "green" | "blue";
+function convertToArray<T>(val: T): T[] {
+  return [val];
+}
+
+console.log(convertToArray(5));
+console.log(convertToArray("React"));
 
 export default function Button() {
-  useEffect(() => {
-    const previousButtonColor = localStorage.getItem(
-      "buttonColor",
-    ) as ButtonColor;
-    console.log(previousButtonColor);
-  }, []);
-
   return <button>Click on me </button>;
 }
